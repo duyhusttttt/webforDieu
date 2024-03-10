@@ -60,7 +60,7 @@ h1 {
 
 .social-button {
     display: flex;
-    justify-content: center; /* Center the content of the button */
+    justify-content: center; 
     align-items: center;
     padding: 15px;
     margin-bottom: 15px;
@@ -69,6 +69,9 @@ h1 {
     border: none;
     font-weight: bold;
     width: 93%; 
+}
+.social-button .mobile-text {
+    display: none;
 }
 
 .google-sign-in {
@@ -100,7 +103,13 @@ h1 {
     color: #999;
     margin: 20px 0;
 }
+.divider-text {
+    display: block;
+}
 
+.divider-mobile-text {
+    display: none;
+}
 .divider::before,
 .divider::after {
     content: '';
@@ -109,8 +118,8 @@ h1 {
     margin: 0px 10px;
 }
 .signup {
-    text-align: center; /* Căn giữa nội dung */
-    width: 100%; /* Đảm bảo rằng nó chiếm đầy chiều rộng */
+    text-align: center; 
+    width: 100%; 
     order: 3; 
     font-size: 17px; 
 }
@@ -136,6 +145,7 @@ footer {
     color: #aaa; 
 }
 
+/* for Mobile */
 
 @media (max-width: 768px) {
     .content {
@@ -192,19 +202,41 @@ footer {
         margin-top: 4px;
         margin-right: -20px;
     }
-    .social-button {
-        width: 98%;
-
+    .social-button .desktop-text {
+        display: none;
     }
-
-    .social-button {
+    .social-button .mobile-text{
+        display: block;
+    }
+    .social-buttons-container {
+        display: flex;
+        justify-content: space-between ; 
+        width: 107%; 
+    }
+   
+    .social-buttons-container .google-sign-in{
+        flex-basis: 40%; 
         display: flex;
         align-items: center;
         justify-content: center;
+
     }
+    .social-buttons-container .facebook-sign-in{
+        flex-basis: 40%; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .signup{
+        margin-left: 10px;
+    }
+    
+    
+ 
     .forgot-password{
-        margin-top: -5px;
-        margin-bottom: 10px;
+        margin-top: 0px;
+        margin-bottom: 15px;
         
         margin-right: -20px;
     }
@@ -213,8 +245,9 @@ footer {
         font-size: 10px;
         color: #999;
         text-align: center;
-        margin-top: 5px;
+        margin-top: 40px;
         margin-left: 10px; 
+        margin-bottom: -29px;
     }
 
     
@@ -232,5 +265,11 @@ footer {
         flex: 1;
         border-bottom: 1px solid #eee;
         margin: 0px 10px;
+    }
+    .divider-mobile-text {
+        display: block;
+    }
+    .divider-text {
+        display: none;
     }
 }
