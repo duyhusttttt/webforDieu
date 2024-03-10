@@ -124,38 +124,31 @@ footer {
 
 @media (max-width: 768px) {
     .content {
-        flex-direction: column;
-        padding: 40px 20px;
-        gap: 30px;
-        align-items: center; /* Center align the flex items */
+        flex-direction: column-reverse; /* Ảnh sẽ hiển thị phía trên */
+        padding: 40px 20px; /* Giảm padding nếu cần */
+        gap: 20px; /* Khoảng cách giữa các phần tử */
     }
-    
     .text-section,
     .image-section {
-        width: 100%; /* Use full width for smaller devices */
-        max-width: 500px; /* Set a max-width to prevent overly wide layouts */
+        width: 100%; /* Chiều rộng đầy đủ */
+        max-width: none;
     }
-
-    /* Create an aspect ratio box */
     .image-section {
-        position: relative;
-        width: 100%; /* Full width of its container */
-        padding-top: 66.67%; /* 4/6 (inverse of 6:4) = 0.6667, converted to percentage */
+        /* Đặt tỉ lệ cho khung chứa ảnh để đạt tỉ lệ 6:4 */
+        width: 100%; /* Chiều rộng đầy đủ */
+        padding-top: 66.67%; /* Tỉ lệ phần trăm dựa trên tỉ lệ ảnh (tỉ lệ 4:6) */
+        position: relative; /* Cho phép định vị tuyệt đối cho ảnh */
     }
-
     .responsive-image {
         position: absolute;
         top: 0;
-        left: 0;
-        width: 100%;
+        left: 50%;
+        transform: translateX(-50%); /* Căn giữa ảnh theo chiều ngang */
         height: 100%;
-        object-fit: cover;
-        object-position: center; /* Adjust this if you want to focus on a different part of the image */
-    }
-
-    /* Adjust footer styles if necessary */
-    footer {
-        font-size: 0.7em; /* You can make the font size smaller on mobile if needed */
+        width: auto; /* Chiều rộng tự động điều chỉnh */
+        max-height: none; /* Không giới hạn chiều cao tối đa */
+        object-fit: cover; /* Cắt ảnh không làm mất tỉ lệ */
+        object-position: center; /* Tập trung ảnh vào giữa */
     }
 }
 
