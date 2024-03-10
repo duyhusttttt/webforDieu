@@ -60,7 +60,7 @@ h1 {
 
 .social-button {
     display: flex;
-    justify-content: center; /* Center the content of the button */
+    justify-content: center; 
     align-items: center;
     padding: 15px;
     margin-bottom: 15px;
